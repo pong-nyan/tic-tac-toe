@@ -2,8 +2,5 @@
 .square {
   width: 100px;
   height: 100px;
-  background-color: red;
-  border-radius: 10px;		/* 둥근 정도 */
-  margin: 10px;				/* 여백 정도 */
   display: inline-block;
 }
