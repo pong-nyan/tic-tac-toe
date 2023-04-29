@@ -1,3 +1,5 @@
 export default function Square() {
-	return <button className="square"> x </button>;
+	return (
+		<button className="square" onClick={() => alert("Click!")}> x </button>
+	);
 }
