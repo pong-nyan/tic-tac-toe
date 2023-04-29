@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from "react";
 
 export default function Squares({turnCount, setTurnCount}) {
 	return (
@@ -11,10 +11,10 @@ export default function Squares({turnCount, setTurnCount}) {
 }
 
 function Square({turnCount, setTurnCount}) {
-	const [value, setValue] = React.useState("");
+	const [value, setValue] = useState(null);
 	function onClickHandler() {
 		turnCount % 2 === 0 ? setValue("X") : setValue("O");
-
+		setTurnCount(turnCount + 1);
 	}
 	return (
 		<button className="square" onClick={onClickHandler}> {value} </button>
