@@ -1,17 +1,23 @@
-export default function Squares({a}) {
-	function Square({a}) {
-		return (
-			<button className="square" onClick={onClickHandler}> {a} </button>
-		);
-	}
+import React from 'react';
+
+export default function Squares({turnCount, setTurnCount}) {
 	return (
 		<div>
-			<Square a={a + 1} />
-			<Square a={a + 2} />
-			<Square a={a + 3} />
+			<Square turnCount={turnCount} setTurnCount={setTurnCount} />
+			<Square turnCount={turnCount} setTurnCount={setTurnCount} />
+			<Square turnCount={turnCount} setTurnCount={setTurnCount} />
 		</div>
 	);
 }
 
-function onClickHandler() {
+function Square({turnCount, setTurnCount}) {
+	const [value, setValue] = React.useState("");
+	function onClickHandler() {
+		turnCount % 2 === 0 ? setValue("X") : setValue("O");
+
+	}
+	return (
+		<button className="square" onClick={onClickHandler}> {value} </button>
+	);
 }
+

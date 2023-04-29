@@ -4,10 +4,10 @@ export default
 
 
 
-function Button9() {
+function Button9({turnCount, setTurnCount}) {
 	const square9 = [];
 	for (let i = 0; i < 3; i++) {
-		square9.push(<Squares a={i*3} />)
+		square9.push(<Squares turnCount={turnCount} setTurnCount={setTurnCount} />)
 	}
 	return (
 		square9
@@ -16,7 +16,8 @@ function Button9() {
 
 
 function App() {
+	const [turnCount, setTurnCount] = useState(0);
 	return (
-		<Button9 />
+		<Button9 turnCount={turnCount} setTurnCount={setTurnCount}/>
 	);
 }
